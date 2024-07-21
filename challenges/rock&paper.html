@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissors</p>
+
+    <button onclick="userPick('Rock');"> Rock</button>
+
+    <button onclick=" userPick('Paper') ">Paper</button>
+
+    <button onclick="userPick('Scissors')">Scissors</button>
+    <script>
+      function computerPick() {
+        let computerMoves = "";
+        const randomNumber = Math.random();
+
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+          computerMoves = "Rock";
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerMoves = "Paper";
+        } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+          computerMoves = "Scissors";
+        }
+        return computerMoves;
+      }
+
+      function userPick(userChoice) {
+        let result = "";
+        const computerMoves = computerPick();
+        if (userChoice === "Rock") {
+          if (computerMoves === "Rock") {
+            result = "Tie";
+          } else if (computerMoves === "Paper") {
+            result = "You lose";
+          } else if (computerMoves === "Scissors") {
+            result = "You win";
+          }
+          alert(
+            `Your chose rock and computer chose ${computerMoves} so ${result}`
+          );
+        } else if (userChoice === "Paper") {
+          if (computerMoves === "Rock") {
+            result = "You win";
+          } else if (computerMoves === "Paper") {
+            result = "Its Tie";
+          } else if (computerMoves === "Scissors") {
+            result = "You lose";
+          }
+          alert(
+            `Your chose Paper and computer chose ${computerMoves} so ${result}`
+          );
+        } else if (userChoice === "Scissors") {
+          if (computerMoves === "Rock") {
+            result = "You lose";
+          } else if (computerMoves === "Paper") {
+            result = "You win";
+          } else if (computerMoves === "Scissors") {
+            result = "Its Tie";
+          }
+          alert(
+            `Your chose Scissors and computer chose ${computerMoves} so ${result}`
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -6,19 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="console.log(`Cart Quantity: ${cartQuantity+=5}`);" >+5</button>
+    <button onclick="cartQuantity <10 ? console.log(`Cart Quantity ${cartQuantity+=1}`) : console.log('Dont update the quantity');" >Add to cart</button>
     <button onclick="console.log(`Cart Quantity:${cartQuantity-=1}`);">Remove from the cart</button>
       <button onclick="console.log(`Cart Quantity:${cartQuantity-=2}`);">-2</button>
       <button onclick="console.log(`Cart Quantity:${cartQuantity-=3}`);">-3</button>
+
+      
     <script>
-        const name = "mynamelol";
-        console.log(`My name is ${name}`);
-        let cost = 5 + 2*3 + 9;
-        console.log(`Cost of food ${cost}`);
-        let costWithTax = (cost *10)/100;
-        console.log(`Tax(10%):$${costWithTax}`);
-        let totalCost = cost + costWithTax;
-        console.log(`Total cost:$${totalCost}`);
+        // const name = "mynamelol";
+        // console.log(`My name is ${name}`);
+        // let cost = 5 + 2*3 + 9;
+        // console.log(`Cost of food ${cost}`);
+        // let costWithTax = (cost *10)/100;
+        // console.log(`Tax(10%):$${costWithTax}`);
+        // let totalCost = cost + costWithTax;
+        // console.log(`Total cost:$${totalCost}`);
         let cartQuantity = 0;
     </script>
 </body>

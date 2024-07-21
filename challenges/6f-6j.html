@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Guess the coin face</p>
+    <button
+      onclick=" const coin = Math.random();
+      let result = '';
+
+    //   if (coin >= 0 && coin < 0.5) {
+    //     result = 'heads';
+    //   } else {
+    //     result = 'tails';
+    //   }
+
+      coin>=0 && coin < 0.5 ? result = 'heads' : result = 'tails';
+
+      let guess='heads';
+    //   if(result === guess){
+    //     console.log(`You guess the heads and computer choose the ${result} so u win.`);
+    //   }
+    //   else{
+    //     console.log(`You guess the heads and computer choose the ${result} so u lose.`);
+    //   }
+
+      result === guess ? console.log(`You guess the heads and computer choose the ${result} so u win.`) : console.log(`You guess the heads and computer choose the ${result} so u lose.`);
+"
+    >
+      heads
+    </button>
+
+    <button
+      onclick="const coin1 = Math.random();
+      let result1 = '';
+    //   if (coin1 >= 0 && coin1 < 0.5) {
+    //     result1 = 'heads';
+    //   } else {
+    //     result1 = 'tails';
+    //   }
+
+      coin1>= 0 && coin1< 0.5 ? result1 = 'heads' : result1 = 'tails';
+        let guess1 = 'tails';
+      if(result1 === guess1){
+        console.log(`You guess the tails and computer choose the ${result1} so u win.`);
+      }else{
+        console.log(`You guess the tails and computer choose the ${result1} so u lose.`);
+      }
+      
+"
+    >
+      Tails
+    </button>
+    <script></script>
+  </body>
+</html>

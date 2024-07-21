@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if(true){
+            console.log('hello world');
+        }else{
+            console.log('Not hello world lol');
+        }
+        const userAge = 14;
+        if(userAge>=16){
+            console.log('You can drive');
+        }else if(15>=16){
+            console.log('Almost there');
+        }else{
+            console.log('U can not drive');
+        }
+
+        // Truthy and Falsy value in javascript
+        /*
+        they r same like condition that is we can put it inside the if condition and check*/
+
+        if(3){
+            console.log("Truthy value");
+        }
+        // what r truthy and falsy value
+        // falsy values r 0 '' NaN undefined 
+        //other than that those r truthy values
+
+        if(0){
+            console.log('see its a falsy value so its not running in console');
+        }
+        // NaN when 
+        if('text'/5){
+            console.log("see the condition inside the if is not a number its wouldnt be consoled out");
+        }
+
+        // ternery operator
+        true ? 'hello' : 'Not hello';
+        // we can even store it 
+        const message =  true ? 'hello' : 'Not hello';
+        console.log(message);
+
+        // if the condition true then execute the code after the question mark else execute after the : 
+
+        // && Guard and || default operator
+        // short-circuit 
+        const message1 = 5 && "Hello"
+        console.log(message1);
+        // Guard operator if the first true then it goes so execute after the and operator and else it doesnt execute that is short circuit
+
+        const what = '' || "HAahha";
+        console.log(what);
+        // Default operator is like even the condition b4 || is false it goes to second and if its true then it doenst go to the 2nd it returns the first 
+
+        // comparison operators r > ,< , >= , <= , ===, !== and logical r && , || , !
+    </script>
+</body>
+</html>
