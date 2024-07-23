@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button onclick="console.log(quantityInc(1));">Add to cart</button>
+      <button onclick="console.log('Cart Quantity:',quantityInc(2));">
+        +2
+      </button>
+      <button onclick="console.log('Cart Quantity:',quantityInc(3));">
+        +3
+      </button>
+      <button
+        onclick="localStorage.removeItem('save'),console.log(`$Cart Quantity: ${quant=0}`, updateDisplay());"
+      >
+        Reset Cart
+      </button>
+      <button onclick="console.log(`Total Quantity: ${quant}`), updateDisplay();">
+        Show Quantity
+      </button>
+    </div>
+
+    <p class="js-show-quantity"></p>
+
+    <script>
+      let quant = JSON.parse(localStorage.getItem("save")) || 0;
+
+      function quantityInc(value) {
+        quant += value;
+        localStorage.setItem('save', JSON.stringify(quant))
+        updateDisplay();
+        return quant;
+      }
+
+      function updateDisplay() {
+        const quantity = document.querySelector(".js-show-quantity");
+        quantity.innerHTML = `Cart Quantity: ${quant}`;
+      }
+    </script>
+  </body>
+</html>

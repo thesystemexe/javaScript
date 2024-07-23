@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Submit button</p>
+    <input type="text" class="js-input" onkeydown="handleSubmit(event)" />
+    <button class="js-btn" , onclick="submit(); ">Submit</button>
+    <script>
+      function handleSubmit(event) {
+        if (event.key === "Enter") {
+          let input = document.querySelector(".js-input").value;
+          console.log(input);
+
+          submit();
+        }
+      }
+      function submit() {
+        const submitElement = document.querySelector(".js-btn");
+        let text = submitElement.innerHTML;
+        if (text === "submit") {
+          submitElement.innerHTML = "submitted";
+        } else {
+          submitElement.innerHTML = "submit";
+        }
+      }
+    </script>
+  </body>
+</html>

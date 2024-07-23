@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const college = {
+            name: 'ace',
+            year: 1998,
+            location: 'xyz'
+        }
+
+        console.log(college.location);
+        // u can modify the properties value
+        college.name = 'ace1';
+        console.log(college);
+
+        // u can create new properties outside as well
+        college.newProperty = 'This is new'
+
+        console.log(college);
+
+        // u can delete the properties like this 
+
+        delete college.newProperty;
+        delete college.year;
+        console.log(college);
+
+
+        const product = {
+            name:'xyz',
+            'delivery-time': '1 day',
+            rating: {
+                star: 4.5,
+                count: 87,
+            },
+            fun: function function1(){
+                console.log('Very good quality');
+            }
+        }
+
+        console.log(college.name);
+        // another method to access the property of an object is bracket notation
+        /*we use this because like if u try to access product.delivery-time u will get error cuz machine interpret some between the string so*/
+
+        // console.log(product.delivery-time);
+
+        console.log(product['delivery-time']);
+        console.log(product.rating.star);
+        // when a function is in object then it called a method 
+        // object.function = method ex r console.log AND Math.random()
+        console.log(product.fun());
+
+
+        // built in method r console log , Math.random , JSON , Localstorage
+
+        //JSON = javascript object notation 
+        /* json is same as javascript object but json doesnt allow to have function inside it*/
+
+        const something = JSON.stringify(product);
+        console.log(something);
+        // to comvert return it into object we use
+        console.log(JSON.parse(something));
+
+        /* object has properties and method like that String also ( it is not string javascript inbuilt converts the strings to objects that why we can have properties and method eg below*/
+
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+
+        // const objectName ={} so here objectName is reference that is called object reference it points to the object 
+
+        const object0 ={
+            message: "wassup"
+        };
+
+        const object6 = object0;
+
+        console.log(object0===object6);
+
+        const object5 ={
+            message:"wassup",
+        };
+
+         console.log(object0===object5);
+
+
+        // shortcuts for an object
+
+        const object1 ={
+            message: 'hello',
+            date: new Date(),
+        }
+
+        // const message = object1.message;
+        // console.log(message);
+
+        const{message , date } = object1;  // destructing when u have the properties same name with variable u wanna store then its better to use this
+        console.log(message , date);
+
+
+        // shorthand property
+
+        const object2 ={
+            // message: message,
+            message,
+        }
+        console.log(object2.message);
+
+        // shorthand method 
+
+        const object3 ={
+            // method : function function2(){
+            //     console.log('Wsssup ma girl');
+            // }
+
+            method(){
+                console.log('wassup bro');
+            }
+        }
+        console.log(object3.method());
+
+
+    </script>
+</body>
+</html>

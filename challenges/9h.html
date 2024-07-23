@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="" onkeyup="handleKey()" class="js-input">
+    <p class="js-show"></p>
+    <script>
+
+        function handleKey(){
+            let inputElement = document.querySelector('.js-input').value;
+
+            const paraElement = document.querySelector('.js-show');
+
+           paraElement.innerHTML = `${inputElement}` 
+
+        }
+
+    </script>
+</body>
+</html>

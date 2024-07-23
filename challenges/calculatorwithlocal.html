@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <button onclick="updateTheValue('1');">1</button>
+      <button onclick="updateTheValue('2');">2</button>
+      <button onclick="updateTheValue('3')">3</button>
+      <button onclick="updateTheValue(' + ')">+</button>
+    </p>
+    <p>
+      <button onclick="updateTheValue('4')">4</button>
+      <button onclick="updateTheValue('5')">5</button>
+      <button onclick="updateTheValue('6')">6</button>
+      <button onclick="updateTheValue(' - ')">-</button>
+    </p>
+    <p>
+      <button onclick="updateTheValue('7')">7</button>
+      <button onclick="updateTheValue('8')">8</button>
+      <button onclick="updateTheValue('9')">9</button>
+      <button onclick="updateTheValue(' * ')">*</button>
+    </p>
+
+    <button onclick="updateTheValue('0')">0</button>
+    <button onclick="updateTheValue('.')">.</button>
+    <button onclick="console.log(totalCalculation()); saveCalculation();">
+      =
+    </button>
+    <button onclick="updateTheValue(' / ')">/</button>
+
+    <p>
+      <button
+        onclick="calculation=''; console.log(`Cleared ${calculation}`); saveCalculation() , updateDisplay() "
+      >
+        clear
+      </button>
+    </p>
+
+    <p class="js-show-cal"></p>
+
+    <script>
+      let calculation = localStorage.getItem("calculation") || "";
+
+      function updateTheValue(value) {
+        calculation += value;
+        console.log(calculation);
+        saveCalculation();
+        updateDisplay();
+      }
+
+      function totalCalculation() {
+        calculation = eval(calculation);
+        updateDisplay();
+        return calculation;
+      }
+
+      function saveCalculation() {
+        localStorage.setItem("calculation", calculation);
+      }
+
+      function updateDisplay(){
+        let paraElement = document.querySelector('.js-show-cal');
+        calculation === ''? paraElement.innerHTML='Cleared': paraElement.innerHTML = `${calculation}`;
+      }
+    </script>
+  </body>
+</html>

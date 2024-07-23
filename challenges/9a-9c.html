@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hi</p>
+    <button>9a</button>
+    <button class="js-9b">9b</button>
+    <p></p>
+
+    <div>
+        <button onclick="result('heads')">heads</button>
+        <button onclick="result('tails')">tails</button>
+    </div>
+
+    <p class="js-result"></p>
+    <script>
+        const element9a = document.querySelector('button');
+
+        let elementText = document.querySelector('.js-9b');
+        elementText.innerHTML = '9bdone';
+
+    
+        function result(face){
+            const chose = useChose(face);
+            const show = document.querySelector('.js-result');
+            show.innerHTML = `You chose :${chose}`;
+            
+        }
+
+        function useChose(face){
+            return face;
+        }
+
+        
+
+
+        
+
+    </script>
+</body>
+</html>

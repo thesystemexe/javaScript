@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>hello</button>
+    <button class="btn-js">Hi</button>
+    <script>
+        // DOM = Document object model
+        // it bascially combine our webpage to javascript
+        /* as u can beloww i am accessing the button element on the page and changing its text using the document querySelector method  so i am combining the webpage to js*/
+        console.log(document.querySelector('button').innerHTML);
+
+        document.querySelector('button').innerHTML = "Changed"
+
+        // what if there r two buttons ?
+
+        const buttonElement = document.querySelector('.btn-js');
+        console.log(buttonElement);
+
+
+
+        // document.body.innerHTML = 'hi';
+        // console.log(document.body);
+        // console.log(document);
+        // console.log(typeof document.body);
+        document.title = 'DOM';
+        console.log(document.title);
+
+        // document is a webpage 
+        // window is browser
+        // so document means webpage also comes under the window
+
+        console.log(window.document); // webpage
+
+        window.console.log('hi');
+        window.alert('hi')
+
+        // we dont use window cuz js automatically does that for us
+
+        
+
+        
+    </script>
+</body>
+</html>
