@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const myArray = [11, 12, 13];
+      console.log(myArray[0]);
+      myArray[0] = 22;
+      console.log(myArray);
+      // array is another type of value
+      const yourArray = [11, "hahaha", true, { name: "nameless" }, [1, 2]];
+
+      console.log(yourArray[3]);
+      console.log(yourArray[4][0]); // 1
+
+      // array is special type of an object
+
+      console.log(typeof myArray);
+      // so it also has properties and method
+
+      console.log(Array.isArray([1, 2]));
+
+      console.log(myArray.length);
+      myArray.push(14);
+      console.log(myArray);
+      // splice used to cut the element form an array from position where to where u want
+
+      myArray.splice(1, 2);
+      console.log(myArray);
+      // loop when we have to run same code again and again
+
+      /*
+
+       let i = 1;
+       while(i<=5){
+        console.log(i);
+        i++;
+       }
+
+       for(let i =0; i<=5; i++){
+        console.log(i);
+       }
+
+       */
+
+      // while is non-standard and for loop is standard
+      // so like i have to run the code until my i value is atleast 0.5 then which one is good to use think of urself
+
+      let i = 0;
+      while (i <= 0.5) {
+        i = Math.random();
+      }
+      console.log(i);
+
+      // looping through array
+
+      const stringArray = ["hi", "iamdone", "imcooked"];
+      for (let index = 0; index < stringArray.length; index++) {
+        const element = stringArray[index];
+        console.log(element);
+      }
+
+      // calculate the total of any array
+
+      const example1 = [1,2,3];
+      let sum =0;
+
+      for(let i =0; i<example1.length; i++){
+        sum+=example1[i];
+      }
+      console.log(sum);
+
+      // double each element in array and return a new array
+
+      const example2 = [1,2,3];
+      let doubledArray = [];
+      for(let i =0; i<example2.length; i++){
+        const newNum =example2[i] *2;
+        doubledArray.push(newNum);
+      }
+      console.log(doubledArray);
+
+    </script>
+  </body>
+</html>
