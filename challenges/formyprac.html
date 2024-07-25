@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <p>Submit button</p>
+    <!-- <p>Submit button</p>
     <input type="text" class="js-input" onkeydown="handleSubmit(event)" />
     <button class="js-btn" , onclick="submit(); ">Submit</button>
     <script>
@@ -26,6 +26,47 @@
         } else {
           submitElement.innerHTML = "submit";
         }
+      }
+    </script> -->
+
+    <p>To do list</p>
+    <input type="text" class="js-input" placeholder="To do" />
+    <input type="date" class="js-duedate">
+    <button onclick="takingRight()" class="js-date">Add</button>
+    <div class="js-div"></div>
+
+    <script>
+      let todoList = [{name:'hi', dueDate:'22-7-2023'},{name:'bye',dueDate:'24-7-2014'}];
+      updateTodo();
+      function updateTodo() {
+        let todoHTML = "";
+        for (let i = 0; i < todoList.length; i++) {
+          let todoObject = todoList[i];
+          // const name = todoObject.name;
+          // const dueDate = todoObject.dueDate;
+          const {name , dueDate} = todoObject;
+          const html = `<p>${name} ${dueDate}<button onclick="todoList.splice(${i},1);
+            updateTodo()">Delete</button></p>`; 
+          todoHTML += html;
+          console.log(todoHTML);
+          console.log(todoList);
+          
+        }
+        const divElement = document.querySelector(".js-div");
+          divElement.innerHTML = todoHTML;
+      }
+
+      function takingRight() {
+        const inputElement = document.querySelector(".js-input");
+        const name = inputElement.value;
+        const dueDateElement = document.querySelector('.js-duedate');
+        const dueDate = dueDateElement.value;
+        console.log(dueDate);
+        todoList.push({/*name: name ,
+           dueDate: dueDate*/ name , dueDate});
+        console.log(todoList);
+        updateTodo();
+        inputElement.value = "";
       }
     </script>
   </body>

@@ -8,27 +8,35 @@
   <body>
     <p>Todo list Practice 1</p>
     <input class="js-input" type="text" placeholder="Todo name" />
+    <input type="date" class="js-dueDate">
     <button onclick="addToDo()">Add</button>
     <p class="js-input-show"></p>
     <div class="js-do-list"></div>
     <script>
-      let tasks = [];
-
+      let tasks = [{name:'hi', dueDate:'22-12-2024'},{name:'bye', dueDate:'22-12-2024'}];
+        renderToDoList();
       function renderToDoList() {
         let toDoListHTML = "";
         for (let i = 0; i < tasks.length; i++) {
-          const todo = tasks[i];
-          const html = `<p>${todo}<p>`;
+          const todoObject = tasks[i];
+          const {name , dueDate} = todoObject;
+          const html = `<p>${name} ${dueDate}<button onclick="deleteToDOItem(${i})">Delete</button><p>`;
           toDoListHTML += html;
         }
         document.querySelector(".js-do-list").innerHTML = toDoListHTML;
       }
       function addToDo() {
         const inputElement = document.querySelector(".js-input");
-        let inputValue = inputElement.value;
-        tasks.push(inputValue);
+        const name = inputElement.value;
+        const dueDateElement = document.querySelector('.js-dueDate');
+        const dueDate = dueDateElement.value;
+        tasks.push({name, dueDate});
         console.log(tasks);
         inputElement.value = "";
+        renderToDoList();
+      }
+      function deleteToDOItem(index){
+        tasks.splice(index,1);
         renderToDoList();
       }
     </script>

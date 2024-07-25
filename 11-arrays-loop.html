@@ -84,6 +84,56 @@
       }
       console.log(doubledArray);
 
+      // arrays r also refrences 
+      const array1 = [1,2,3];
+      const array2 = array1;
+      array2.push(10);
+      console.log(array2);
+      console.log(array1);
+
+      // if u wanna stop that then use slice method
+
+      const array3 = [10,20,30];
+      const array4 = array3.slice();
+      array4.push(40);
+      console.log(array3);
+      console.log(array4);
+
+    // destructuring in array 
+    // if u wanna access the element in array
+    //  const firstValue = array3[0];
+     // like this but we have bettter way
+     const [firstValue , secondValue] = array3;
+
+     // break and continue in loops
+     // break - exit from the loop
+     // continue - skip that iteration form the loop
+
+     for(let i =1; i<=10; i++){
+      // if u want to skip iteration at count 3
+      if(i===3){
+        continue;
+      }
+            // if i want to stop when count is 8
+
+      if(i===8){
+        break;
+      }
+      console.log(i);
+     }
+
+     // continue is diff in while loop
+     let m = 1;
+     while(m<=10){
+      // if i want to skip at count 3 then i have to do the incremnt in that loop otherwise it gonna endup in infinty loop
+       if(m===3){
+          m++;
+         continue;
+       }
+      console.log(m);
+      m++;
+     }
+     
     </script>
   </body>
 </html>
