@@ -8,15 +8,32 @@
   <body>
     <script>
       function findIndex(string, word) {
-        for (let i = 0; i <= string.length; i++) {
+        for (let i = 0; i < string.length; i++) {
           if (string[i] === word) {
             return i;
-          } else {
-            return -1;
+          } 
+          }
+
+          return -1;
+
+        }
+      
+     
+
+
+      function unique(array){
+        const result =[];
+        for(let i =0; i<array.length; i++){
+          const word = array[i];
+          if(findIndex(result, word)===-1){
+            result.push(word);
           }
         }
+        return result;
       }
-      console.log(findIndex([ "mango", "apple"], "apple"));
+
+     console.log(unique(['apple', 'mango','apple'])); 
+
 
       
     </script>

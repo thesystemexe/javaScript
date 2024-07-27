@@ -8,19 +8,45 @@ updateScoreElem();
 
 let isAutoPlay = false;
 let intervalID;
+const autoElement = document.querySelector(".alt-auto");
 
-function autoPlay() {
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "a") {
+    autoPlay();
+  }
+});
+
+const autoPlay = () => {
   if (!isAutoPlay) {
+    autoElement.innerHTML = "Stop playing";
     intervalID = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
     isAutoPlay = true;
   } else {
+    autoElement.innerHTML = "Auto Play";
+
     clearInterval(intervalID);
     isAutoPlay = false;
   }
-}
+};
+autoElement.addEventListener("click", () => {
+  autoPlay();
+});
+
+// function autoPlay() {
+//   if (!isAutoPlay) {
+//     intervalID = setInterval(() => {
+//       const playerMove = pickComputerMove();
+//       playGame(playerMove);
+//     }, 1000);
+//     isAutoPlay = true;
+//   } else {
+//     clearInterval(intervalID);
+//     isAutoPlay = false;
+//   }
+// }
 
 document.body.addEventListener("keydown", (event) => {
   if (event.key === "r") {
@@ -28,7 +54,8 @@ document.body.addEventListener("keydown", (event) => {
   } else if (event.key === "p") {
     playGame("paper");
   } else if (event.key === "s") {
-    playGame("scissors");r
+    playGame("scissors");
+    r;
   }
 });
 
@@ -65,7 +92,7 @@ function playGame(playerMove) {
 
   document.querySelector(
     ".js-choices"
-  ).innerHTML = `You <img class="move-img" src="images/${playerMove}-emoji.png"> <img class="move-img" src="images/${computerMove}-emoji.png"  alt="">Computer`;
+  ).innerHTML = `You <img class="move-img" src="../images/${playerMove}-emoji.png"> <img class="move-img" src="../images/${computerMove}-emoji.png"  alt="">Computer`;
 
   document.querySelector(".js-result").innerHTML = result;
 
@@ -105,3 +132,20 @@ function updateScoreElem() {
 
   scoreShow.innerHTML = `Wins:${score.wins} Losses:${score.losses} Ties:${score.ties}`;
 }
+
+const resetScore = () => {
+  (score.wins = 0), (score.losses = 0), (score.ties = 0);
+  localStorage.removeItem("new"), updateScoreElem();
+};
+
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "Backspace") {
+    resetScore();
+  }
+});
+
+const resetButton = document.querySelector(".alt-reset");
+
+resetButton.addEventListener("click", () => {
+  resetScore();
+});

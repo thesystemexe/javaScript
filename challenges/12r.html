@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/12r.css" />
+  </head>
+  <body>
+    <p class="title-text">Rock Paper Scissors</p>
+    <button
+      class="move-btn r-click"
+      onclick="
+      playGame('rock');
+
+    "
+    >
+      <img class="move-img" src="../images/rock-emoji.png" alt="" />
+    </button>
+
+    <button
+      class="move-btn p-click"
+      onclick="
+      playGame('paper');
+    "
+    >
+      <img class="move-img" src="../images/paper-emoji.png" alt="" />
+    </button>
+
+    <button
+      class="move-btn s-click"
+      onclick="
+      playGame('scissors');
+    "
+    >
+      <img class="move-img" src="../images/scissors-emoji.png" alt="" />
+    </button>
+
+    <p class="js-result result"></p>
+
+    <p class="js-choices"></p>
+
+    <p class="js-score score"></p>
+
+    <button class="reset-btn alt-reset">Reset</button>
+    <p>Are you sure want to reset the score ?<button>yes</button><button>no</button></p>
+
+    <button class="auto-play-btn alt-auto">Auto Play</button>
+    <script src="../scripts/12r.js"></script>
+  </body>
+</html>

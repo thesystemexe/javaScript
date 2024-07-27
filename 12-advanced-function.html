@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function function1() {
+        console.log("hello");
+      }
+
+      function1();
+
+      const hello = function function2() {
+        console.log("Hello");
+      };
+
+      console.log(hello);
+      hello();
+
+      // so function is value and we can store it inside the variable
+
+      // function2() has no use i m not callling the function by that function but im calling it from the variable have stored the function
+
+      const unknownFunction = function () {
+        console.log("i have no name");
+      };
+
+      unknownFunction();
+      // so this is called a anonymous function
+
+      const object1 = {
+        name: "hi",
+        fun: function () {
+          console.log("I am method");
+        },
+      };
+      object1.fun();
+      // function inside an object is a method
+
+      function callingFun(param) {
+        console.log(param);
+      }
+
+      const hi = function hi() {
+        return "hi";
+      };
+
+      callingFun(hi());
+
+      // this is called calling a function inside a function
+
+      // why javaScript is asynchronous
+      /*
+      console.log('b4 setTimeout');
+
+      setTimeout(function (){
+        console.log('hi');
+      },2000);
+
+      console.log('Iam after the setTimeout');
+    // Javascript doesnt wait for the setTimeout to get execute then move to the next line 
+
+    setInterval(function(){
+        console.log("this is interval");
+    },3000);
+    */
+
+      // another and better method to loop through the array is forEach
+
+      ["mango", "apple", "lemon"].forEach((value, index) => {
+        console.log(value);
+        console.log(index);
+      });
+
+      // Arrow function
+
+      const arrowFunction = () => {
+        console.log("This is arrow function");
+      };
+
+      arrowFunction();
+
+      //benefits of arrowFunction over normal function
+
+      function paraWithBracket(param) {
+        console.log(param);
+      }
+
+      // if there is single parameter then we dont need the open bracket
+
+      const parameter = (param) => {
+        console.log(param);
+      };
+
+      parameter("firstAdv");
+
+      // 2nd is the when u have to return only in the function
+
+      //  const singleLine = (param)=>{
+      //    return param;
+      //  }
+
+      const singleLine = (param) => param;
+      console.log(singleLine("hell yeah"));
+
+      // 3rd in objects its uses
+
+      const object = {
+        fun: function () {
+          console.log("basic");
+        },
+
+        fun1() {
+          console.log("short hand ");
+        },
+
+        method: () => {
+          console.log("method");
+        },
+      };
+
+      object.fun1();
+      object.method();
+
+      // shorthand method is better as compare to arrow key
+      // whenever a function is called in a function its better to use the arrow key function
+
+      // array have 2 more methods map and filter
+      // filter create a new array with the give condition
+      // if true put value in the array else doesnt
+
+      console.log(
+        [1, -5, 10].filter((value, index) => {
+          return true;
+        })
+      );
+
+      console.log(
+        [1, -5, 10].filter((value, index) => {
+          return false;
+        })
+      );
+
+      // return array with +ve value
+
+      console.log(
+        [1, -8, 10, -2].filter((value, index) => {
+          /*
+        if(value >=0){
+          return true;
+        }else{
+          return false;
+        }
+          */
+          return value >= 0;
+        })
+      );
+
+      // map method creates a new array and based on applied condition it apply and return the new array
+
+      console.log(
+        [1, 2, 3].map((value, index) => {
+          return value * 2;
+        })
+      );
+
+      // same like above function
+      console.log([1, 2, 3].map((value) => value * 2));
+
+      // closure 
+    </script>
+  </body>
+</html>

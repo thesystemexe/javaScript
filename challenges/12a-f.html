@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="js-btn" onclick="change()">Start</button>
+    <button class="js-cart" onclick="addToCart()">Add to cart</button>
+    <p class="show-added"></p>
+    <button onclick="message++; displayNotification();">Add</button>
+    <button
+      onclick="if(message>0){
+      message--; if(message===0){
+        stopNotification();
+      }
+    }"
+    >
+      Remove
+    </button>
+    <script src="../scripts/12a-f.js"></script>
+  </body>
+</html>
